@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 1rem;
+            font-family: 'Merriweather Sans', sans-serif;
+            background: #ffffff;
+            color: #333;
+            padding: 1rem;
+        }
+        .all-products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            width: 230px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-info {
+            text-align: center;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #f9004d;
+            margin: 10px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .product-btn, .cart-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .product-btn {
+            background: #007bff;
+        }
+        .cart-btn {
+            background: #28a745;
+        }
+        .product-btn:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+        .cart-btn:hover {
+            background: #218838;
+            transform: translateY(-3px);
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.715);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+        .footer_col {
+            margin-bottom: 20px;
+        }
+        .footer_col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .footer_col ul {
+            list-style: none;
+        }
+        .footer_col ul li {
+            margin-bottom: 10px;
+        }
+        .footer_col ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer_col ul li a:hover {
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            .all-products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .checked {
+  color: orange;
+}
+    </style>
+</head>
+<body>
+    <section class="all-products">
+        <div class="product">
+            <img src="C:\@karan9027\clothes\61YjYawo3VL._SX300_SY300_QL70_FMwebp_.webp" alt="Action Figure">
+            <div class="product-info">
+                <h6 class="product-title">Transforming Action Figures Converting from Robot to Pickup Car Toy for Kids</h6>
+                <p class="product-price">₹3997</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="cart.html">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\clothes\418W7MMkyEL._SY300_SX300_QL70_FMwebp_.webp" alt="Toy Gun">
+            <div class="product-info">
+                <h6 class="product-title">Fiddlys Ak 47 Toy Gun/Shooting Gun for Kids with Laser Light and 500 Bullets</h6>
+                <p class="product-price">₹717</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="cart.html">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\clothes\31wm0AX5CvL._SX300_SY300_QL70_FMwebp_.webp" alt="Teddy Bear">
+            <div class="product-info">
+                <h6 class="product-title">Amazon Brand - Jam & Honey Teddy Bear, Cute</h6>
+                <p class="product-price">₹299</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="cart.html">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\clothes\41BbMAV-aaL._SX300_SY300_QL70_FMwebp_.webp" alt="RC Car">
+            <div class="product-info">
+                <h6 class="product-title">RC Car High Speed Mini 1:24 Scale USB Rechargeable Remote Control Car for Kids | Racing Car</h6>
+                <p class="product-price">₹699</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="cart.html">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\clothes\41SMFsDvi2L._SX300_SY300_QL70_FMwebp_.webp" alt="Penguin Soft Toy">
+            <div class="product-info">
+                <h6 class="product-title">Amazon Brand - Jam & Honey Penguin, Plush/Soft Toy for Boys, Girls and Kids</h6>
+                <p class="product-price">₹243</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="cart.html">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\clothes\41yoj4Jrs-L._SY300_SX300_QL70_FMwebp_.webp" alt="Foosball">
+            <div class="product-info">
+                <h6 class="product-title">Amazon Brand - Jam & Honey Foosball (Medium) | Table Soccer Game Board for Adults/Kids - Indoor Sport</h6>
+                <p class="product-price">₹1399</p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="cart.html">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer_col">
+            <h2>Company</h2>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Affiliate Program</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h2>Get Help</h2>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Order Status</a></li>
+                <li><a href="#">Payment Options</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h2>Online Shop</h2>
+            <ul>
+                <li><a href="#">Toys</a></li>
+                <li><a href="#">Stuffed Animals</a></li>
+                <li><a href="#">RC Cars</a></li>
+                <li><a href="#">Educational Toys</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h2>Follow Us</h2>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

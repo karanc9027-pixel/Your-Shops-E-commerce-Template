@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MobileYS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 1rem;
+            font-family: 'Merriweather Sans', sans-serif;
+            background: #ffffff;
+            color: #333;
+            padding: 1rem;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            width: 230px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-info {
+            text-align: center;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #f9004d;
+            margin: 10px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .product-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            background: #007bff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .cart-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            background: #28a745;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .product-btn:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+        .cart-btn:hover {
+            background: #218838;
+            transform: translateY(-3px);
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.715);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+        .footer_col {
+            margin-bottom: 20px;
+        }
+        .footer_col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .footer_col ul {
+            list-style: none;
+        }
+        .footer_col ul li {
+            margin-bottom: 10px;
+        }
+        .footer_col ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer_col ul li a:hover {
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="products">
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\iphone 15pro max.webp" alt="iPhone 15 Pro Max">
+            <div class="product-info">
+                <h6 class="product-title">iPhone 15 Pro Max (256 GB)</h6>
+                <p class="product-price">₹159900</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\Galaxy S23 ultra.webp.jpeg" alt="Samsung Galaxy S23 Ultra">
+            <div class="product-info">
+                <h6 class="product-title">Samsung Galaxy S23 Ultra 5G (12GB, 256GB)</h6>
+                <p class="product-price">₹156900</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\one plus10 pro.webp" alt="OnePlus 10 Pro">
+            <div class="product-info">
+                <h6 class="product-title">OnePlus 10 Pro 5G (8GB, 128GB)</h6>
+                <p class="product-price">₹66999</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\redmi12 5g.webp" alt="Redmi 12 5G">
+            <div class="product-info">
+                <h6 class="product-title">Redmi 12 5G Silver (6GB RAM, 128GB)</h6>
+                <p class="product-price">₹17999</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\418aHSujcPL._SX300_SY300_QL70_FMwebp_.webp" alt="Realme 11 Pro 5G">
+            <div class="product-info">
+                <h6 class="product-title">Realme 11 Pro 5G (8GB RAM, 256GB, 100MP)</h6>
+                <p class="product-price">₹23860</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\41bLD50sZSL._SX300_SY300_QL70_FMwebp_.webp" alt="iQOO Z7s 5G">
+            <div class="product-info">
+                <h6 class="product-title">iQOO Z7s 5G (6GB RAM, 128GB, Snapdragon 695)</h6>
+                <p class="product-price">₹15999</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="main">
+            <div class="row">
+                <div class="footer_col">
+                    <h2>Company</h2>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Others</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <h2>Get Help</h2>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shopping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer_col">
+                    <h2>Online Shop</h2>
+                    <ul>
+                        <li><a href="#">Watch</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Dress</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

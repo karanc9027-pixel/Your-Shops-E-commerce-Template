@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid black;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .txt_field {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .txt_field input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #675f5f;
+            background: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .txt_field label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #adadad;
+            transition: 0.3s;
+        }
+
+        .txt_field input:focus ~ label,
+        .txt_field input:valid ~ label {
+            top: -10px;
+            font-size: 12px;
+            color: #2691d9;
+        }
+
+        .txt_field span::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2691d9;
+            transition: 0.5s;
+        }
+
+        .txt_field input:focus ~ span::before,
+        .txt_field input:valid ~ span::before {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: #ccc;
+            color: #e9f4fb;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: not-allowed;
+            transition: 0.5s;
+        }
+
+        input[type="submit"]:enabled {
+            background: #2691d9;
+            cursor: pointer;
+        }
+
+        .signup_link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup_link a {
+            color: #2691d9;
+            text-decoration: none;
+        }
+
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function checkForm() {
+            const username = document.getElementById("username").value;
+            const pass = document.getElementById("pass").value;
+            const submitBtn = document.querySelector('input[type="submit"]');
+            
+            if (username && pass) {
+                submitBtn.disabled = false;
+                submitBtn.style.backgroundColor = "#2691d9";
+                submitBtn.style.cursor = "pointer";
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.style.backgroundColor = "#ccc";
+                submitBtn.style.cursor = "not-allowed";
+            }
+        }
+
+        function registerUser() {
+            const username = document.getElementById("username").value;
+            const pass = document.getElementById("pass").value;
+            
+            if (username && pass) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', pass);
+                console.log('Registered Information:');
+                console.log('Username:', username);
+                console.log('Password:', pass);
+                alert('User registered successfully!');
+                document.getElementById("signupForm").reset();
+                checkForm();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Login</h1>
+    <form id="signupForm" onsubmit="registerUser(); return false;">
+        <div class="txt_field">
+            <input type="text" id="username" required oninput="checkForm()">
+            <span></span>
+            <label>Username</label>
+        </div>
+        <div class="txt_field">
+            <input type="password" id="pass" required oninput="checkForm()">
+            <span></span>
+            <label>Password</label>
+        </div>
+        <input type="submit" value="Sign Up" disabled>
+        <div class="signup_link">
+            Already have an account? <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\YSsignup.html">Signup Here</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

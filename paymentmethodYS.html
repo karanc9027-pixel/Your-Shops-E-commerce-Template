@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .payment-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .payment-header {
+            background-color: #2874f0;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .payment-option {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .payment-option label {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .details {
+            margin-left: 20px;
+            margin-top: 10px;
+            color: #666;
+            display: none;
+        }
+
+        .upi-options {
+            display: none;
+        }
+
+        .add-gift-card,
+        .confirm-button {
+            background-color: #2874f0;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .add-gift-card:hover,
+        .confirm-button:hover {
+            background-color: #1a5bbd;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-header">
+            PAYMENT OPTIONS
+        </div>
+        <div class="payment-option" data-option="UPI">
+            <input type="radio" id="upi" name="payment" value="UPI">
+            <label for="upi">UPI</label>
+            <div class="details upi-options">
+                <input type="radio" id="phonepe" name="upi-option" value="PhonePe">
+                <label for="phonepe">PhonePe</label><br>
+                <input type="radio" id="upi-id" name="upi-option" value="Your UPI ID">
+                <label for="upi-id">Your UPI ID</label>
+            </div>
+        </div>
+        <div class="payment-option" data-option="Wallets">
+            <input type="radio" id="wallets" name="payment" value="Wallets">
+            <label for="wallets">Wallets</label>
+            <div class="details wallets-option">
+                Add your wallet details here.
+            </div>
+        </div>
+        <div class="payment-option" data-option="Credit/Debit Card">
+            <input type="radio" id="card" name="payment" value="Credit/Debit Card">
+            <label for="card">Credit / Debit / ATM Card</label>
+            <div class="details card-option">Add and secure cards as per RBI guidelines</div>
+        </div>
+        <div class="payment-option" data-option="Net Banking">
+            <input type="radio" id="net-banking" name="payment" value="Net Banking">
+            <label for="net-banking">Net Banking</label>
+            <div class="details netbanking-option">This instrument has low success, use UPI or cards for better experience</div>
+        </div>
+        <div class="payment-option" data-option="Cash on Delivery">
+            <input type="radio" id="cod" name="payment" value="Cash on Delivery">
+            <label for="cod">Cash on Delivery</label>
+            <div class="details cod-option">Pay with cash upon delivery.</div>
+        </div>
+        <div class="payment-option" data-option="EMI">
+            <input type="radio" id="emi" name="payment" value="EMI">
+            <label for="emi">EMI (Easy Installments)</label>
+            <div class="details emi-option">Not applicable</div>
+        </div>
+        <button class="add-gift-card">Add Gift Card</button>
+        <button class="confirm-button">Confirm</button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentOptions = document.querySelectorAll('.payment-option');
+
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    const selectedOption = option.querySelector('input[name="payment"]');
+                    selectedOption.checked = true;
+
+                    const details = document.querySelectorAll('.details');
+                    details.forEach(detail => detail.style.display = 'none');
+
+                    const upiOptions = document.querySelector('.upi-options');
+                    if (selectedOption.id === 'upi') {
+                        upiOptions.style.display = 'block';
+                    } else {
+                        upiOptions.style.display = 'none';
+                    }
+
+                    const optionDetails = option.querySelector('.details');
+                    if (optionDetails) {
+                        optionDetails.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

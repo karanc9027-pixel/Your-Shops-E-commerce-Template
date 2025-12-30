@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 2px solid black;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .txt_field {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .txt_field input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #675f5f;
+            background: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .txt_field label {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #adadad;
+            transition: 0.3s;
+        }
+
+        .txt_field input:focus~label,
+        .txt_field input:valid~label {
+            top: -10px;
+            font-size: 12px;
+            color: #2691d9;
+        }
+
+        .txt_field input:focus~span::before,
+        .txt_field input:valid~span::before {
+            width: 100%;
+        }
+
+        .txt_field span::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #2691d9;
+            transition: 0.5s;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: #ccc;
+            color: #e9f4fb;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: not-allowed;
+            transition: 0.5s;
+        }
+
+        input[type="submit"].active {
+            background: #2691d9;
+            cursor: pointer;
+        }
+
+        input[type="submit"].active:hover {
+            background: #1b6dbf;
+        }
+
+        .signup_link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup_link a {
+            color: #2691d9;
+            text-decoration: none;
+        }
+
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>YourShop Delivery Address</h1>
+        <form id="deliveryForm">
+            <div class="txt_field">
+                <input type="text" name="name" required oninput="checkForm()">
+                <span></span>
+                <label>Full Name (Required)</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="phone" required oninput="checkForm()">
+                <span></span>
+                <label>Phone Number (Required)</label>
+            </div>
+            <div class="txt_field">
+                <input type="number" name="pincode" required oninput="checkForm()">
+                <span></span>
+                <label>Pincode (Required)</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="state" required oninput="checkForm()">
+                <span></span>
+                <label>State (Required)</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="city" required oninput="checkForm()">
+                <span></span>
+                <label>City (Required)</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="house" required oninput="checkForm()">
+                <span></span>
+                <label>House No, Building Name (Required)</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="road" required oninput="checkForm()">
+                <span></span>
+                <label>Road Name, Area, Colony (Required)</label>
+            </div>
+            <input type="submit" value="Save Address And Next" onclick="saveAndProceed(event)">
+        </form>
+    </div>
+
+    <script>
+        function checkForm() {
+            const form = document.getElementById('deliveryForm');
+            const submitBtn = form.querySelector('input[type="submit"]');
+            const inputs = form.querySelectorAll('input[type="text"], input[type="number"]');
+            let allFilled = true;
+
+            inputs.forEach(input => {
+                if (!input.value) {
+                    allFilled = false;
+                }
+            });
+
+            if (allFilled) {
+                submitBtn.classList.add('active');
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.classList.remove('active');
+                submitBtn.disabled = true;
+            }
+        }
+
+        function saveAndProceed(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('deliveryForm');
+            const formData = new FormData(form);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            localStorage.setItem('deliveryAddress', JSON.stringify(data));
+
+            // Log the data to the console
+            console.log(data);
+
+            // Clear the form fields
+            form.reset();
+
+            if (document.querySelector('input[type="submit"]').classList.contains('active')) {
+                window.open('paymentmethodYS.html');
+            }
+        }
+    </script>
+</body>
+
+</html>

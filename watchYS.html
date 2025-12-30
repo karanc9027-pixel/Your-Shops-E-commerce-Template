@@ -1,0 +1,268 @@
+<html>
+    <head></head>
+    <body>
+            <div class="all-products">
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    <title>SmartWatchYS</title>
+                    <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                        body {
+                            font-size: 1rem;
+                            font-family: 'Merriweather Sans', sans-serif;
+                            background: #ffffff;
+                            color: #333;
+                            padding: 1rem;
+                        }
+                        .products {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-around;
+                            margin-top: 20px;
+                        }
+                        .product {
+                            width: 230px;
+                            background: #fff;
+                            border: 1px solid #ddd;
+                            border-radius: 10px;
+                            padding: 15px;
+                            margin: 20px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            transition: transform 0.4s ease;
+                            position: relative;
+                        }
+                        .product:hover {
+                            transform: scale(1.05);
+                            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                        }
+                        .product img {
+                            width: 100%;
+                            border-radius: 10px;
+                        }
+                        .product-info {
+                            text-align: center;
+                        }
+                        .product-title {
+                            font-size: 1.1rem;
+                            color: #333;
+                            margin: 10px 0;
+                        }
+                        .product-price {
+                            font-size: 1rem;
+                            font-weight: bold;
+                            color: #f9004d;
+                            margin: 10px 0;
+                        }
+                        .button-group {
+                            display: flex;
+                            justify-content: center;
+                            gap: 10px;
+                        }
+                        .product-btn {
+                            display: inline-block;
+                            padding: 10px 15px;
+                            border-radius: 20px;
+                            background: #007bff;
+                            color: #fff;
+                            text-decoration: none;
+                            font-size: 1rem;
+                            transition: background 0.3s, transform 0.3s;
+                        }
+                        .cart-btn {
+                            display: inline-block;
+                            padding: 10px 15px;
+                            border-radius: 20px;
+                            background: #28a745;
+                            color: #fff;
+                            text-decoration: none;
+                            font-size: 1rem;
+                            transition: background 0.3s, transform 0.3s;
+                        }
+                        .product-btn:hover {
+                            background: #0056b3;
+                            transform: translateY(-3px);
+                        }
+                        .cart-btn:hover {
+                            background: #218838;
+                            transform: translateY(-3px);
+                        }
+                        .footer {
+                            background: rgba(0, 0, 0, 0.715);
+                            color: white;
+                            text-align: center;
+                            padding: 1rem;
+                            margin-top: 20px;
+                        }
+                        .footer_col {
+                            margin-bottom: 20px;
+                        }
+                        .footer_col h4 {
+                            font-size: 1.2rem;
+                            margin-bottom: 10px;
+                        }
+                        .footer_col ul {
+                            list-style: none;
+                        }
+                        .footer_col ul li {
+                            margin-bottom: 10px;
+                        }
+                        .footer_col ul li a {
+                            color: white;
+                            text-decoration: none;
+                            transition: color 0.3s;
+                        }
+                        .footer_col ul li a:hover {
+                            color: #ccc;
+                        }
+                        @media (max-width: 768px) {
+                            .products {
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                        }
+                        .checked {
+                             color: orange;
+                                }
+                    </style>
+                </head>
+                <body>
+                    <section class="products">
+                        <div class="product">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\71LfnkRgZ4L._AC_UF1000,1000_QL80_FMwebp_.webp" alt="iPhone 15 Pro Max">
+                            <div class="product-info">
+                                <h6 class="product-title">Apple Watch(2nd Gen)[GPS] color-Midnight</h6>
+                                <p class="product-price">₹28000</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star chacked"></span>
+
+                                <div class="button-group">
+                                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                                    <a class="cart-btn" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\61nBzBREzGL._AC_UF1000,1000_QL80_FMwebp_.webp" alt="Samsung Galaxy S23 Ultra">
+                            <div class="product-info">
+                                <h6 class="product-title">Samsung Galaxy Watch(compatible with android only) color-black Black</h6>
+                                <p class="product-price">₹12990</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <div class="button-group">
+                                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                                    <a class="cart-btn" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\71iRAzvSH5L._AC_UF1000,1000_QL80_FMwebp_.webp" alt="OnePlus 10 Pro">
+                            <div class="product-info">
+                                <h6 class="product-title">Noise ColorFit Pro 5 Max AMOLED Display Elite Silver</h6>
+                                <p class="product-price">₹5998</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star chacked"></span>
+                                <span class="fa fa-star"></span>
+                                <div class="button-group">
+                                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                                    <a class="cart-btn" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\61gnwDgVZbL._AC_UF1000,1000_QL80_FMwebp_.webp" alt="Redmi 12 5G">
+                            <div class="product-info">
+                                <h6 class="product-title">Fire bolt ninja call pro with Sp02 Black</h6>
+                                <p class="product-price">₹1299</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star chacked"></span>
+                                <span class="fa fa-star"></span>
+                                <div class="button-group">
+                                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                                    <a class="cart-btn" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\61IMRs+o0iL._AC_UF1000,1000_QL80_FMwebp_.webp" alt="Realme 11 Pro 5G">
+                            <div class="product-info">
+                                <h6 class="product-title">boAt Xtend watch with Alexa Built Pitch black</h6>
+                                <p class="product-price">₹1699</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star chacked"></span>
+                                <span class="fa fa-star"></span>
+                                <div class="button-group">
+                                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                                    <a class="cart-btn" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\71cWsNcJI0L._AC_UF1000,1000_QL80_FMwebp_.webp" alt="iQOO Z7s 5G">
+                            <div class="product-info">
+                                <h6 class="product-title">boAt Wave Elevate AI voice Assistante HR& SPO2 black</h6>
+                                <p class="product-price">₹15999</p>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <div class="button-group">
+                                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                                    <a class="cart-btn" href="#">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <footer class="footer">
+                        <div class="main">
+                            <div class="row">
+                                <div class="footer_col">
+                                    <h2>Company</h2>
+                                    <ul>
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">Our Services</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Others</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_col">
+                                    <h2>Get Help</h2>
+                                    <ul>
+                                        <li><a href="#">FAQ</a></li>
+                                        <li><a href="#">Shopping</a></li>
+                                        <li><a href="#">Returns</a></li>
+                                        <li><a href="#">Payment Options</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer_col">
+                                    <h2>Online Shop</h2>
+                                    <ul>
+                                        <li><a href="#">Watch</a></li>
+                                        <li><a href="#">Bag</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                        <li><a href="#">Dress</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </body>
+                </html>
+                              

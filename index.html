@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shops</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        section {
+            flex: 1;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 20px rgba(47, 38, 38, 0.3);
+            padding: 10px;
+            background: #fff;
+            position: relative;
+        }
+
+        .logo {
+            font-family: cursive;
+            font-size: 30px;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f9004d;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        ul li {
+            position: relative;
+            margin: 0 10px;
+        }
+
+        ul li a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        ul li a:hover {
+            color: #f9004d;
+            transform: scale(1.1);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        ul li:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .texts {
+            text-align: left;
+            padding: 50px;
+        }
+
+        .texts h1 {
+            font-family: cursive;
+            font-size: 60px;
+            color: #cb91b1;
+        }
+
+        .texts h1 span {
+            color: #f9004d;
+        }
+
+        .texts p {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .account-btn {
+            width: 130px;
+            height: 50px;
+            border: 1px solid;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 5px 20px 5px 0;
+            transition: background 0.5s, color 0.5s;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .account-btn:hover {
+            background: rgb(132, 79, 79);
+            color: #e9f4fb;
+        }
+
+        .account-btn .fa-user-circle {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .signup_link {
+            margin: 5px 10px;
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .signup_link a {
+            color: #2691d9;
+            text-decoration: none;
+        }
+
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background:rgba(0, 0, 0, 0.543);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 3px 0;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 500px;
+        }
+
+        .search-bar {
+            position: relative;
+            width: 50%;
+            max-width: 300px;
+            transition: width 0.5s;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            transition: width 0.5s;
+            font-size: 16px;
+            background: #f9f9f9;
+        }
+
+        .search-bar .fa-search {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            width: 230px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .product-card .price {
+            font-size: 14px;
+            font-weight: bold;
+            color: #f9004d;
+            margin-top: 10px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            width: calc(50% - 20px);
+            padding: 6px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            color: #fff;
+            font-weight: bold;
+        }
+        a{
+            text-decoration: none;
+        }
+        .buttons button.buy {
+            background-color: #007bff;
+        }
+
+        .buttons button.buy {
+         color: white; /* Set text color to white */
+        }
+
+
+        .buttons button.cart {
+            background-color: #28a745;
+        }
+
+        .buttons button:hover {
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .logo {
+                flex: 1;
+                order: 2; /* Ensure logo is in the middle */
+            }
+
+            .search-bar {
+                flex: 1;
+                order: 3; /* Ensure search bar is in the middle */
+                width: 100%;
+            }
+
+            .account-btn {
+                order: 4; /* Place account button at the end */
+                margin-right: 2px;
+            }
+
+            .menu-toggle {
+                display: flex;
+                order: 1; /* Place menu toggle to the left */
+                margin-right: 10px;
+            }
+
+            ul {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+                order: 5; /* Ensure navigation comes last */
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            ul.show {
+                display: flex;
+            }
+
+            ul li {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        /* General styles for the banner section */
+        .banner {
+            margin-top: 20px; /* Add margin space above the banner */
+        }
+
+        .banner img {
+            width: 100%; /* Ensure the banner image spans the full width */
+            border-radius: 20px; /* Rounded corners for the banner image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+            max-height: 300px; /* Limit the height of the banner image */
+            object-fit: cover; /* Ensure the image covers the container */
+        }
+        /* .banner1 {
+            margin-top: 10px; 
+        }
+
+        /* .banner1 img {
+            width: 100%; 
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            max-height: 400px; 
+            object-fit:cover;
+            position: relative; 
+            transition: all 0.6s;
+        }
+        .banner1 img:hover {
+            display: inline-block;
+            scale: 1.1;
+            box-shadow: 0 8px 16px rgba(1, 0, 0, 0.2);
+            
+          
+        } */ 
+
+    </style>
+</head>
+<body>
+    <aside id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" aria-label="Close Navigation" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <div class="dropdown-content">
+            <a href="watchYS.html">Smart Watches</a>
+            <a href="mobileYS.html">Mobiles</a>
+            <a href="laptopYS.html">Laptops</a>
+            <a href="#">Women Ethnic</a>
+            <a href="#">Women Western</a>
+            <a href="#">Men</a>
+            <a href="toyesYS.html">Kids</a>
+            <a href="#">Home & Kitchen</a>
+            <a href="#">Beauty & health</a>
+            <a href="#">Jewellery & Accessories</a>
+            <a href="#">Bags & Footwear</a>
+            <a href="#">Electronics</a>
+            <a href="#">Sports & Fitness</a>
+            <a href="#">Car & Motorbike</a>
+            <a href="#">Help & More</a>
+        </div>
+        <a href="#">My Orders</a>
+        <a href="#">Contacts</a>
+        <a href="#">Help</a>
+        <a href="#">New Item</a>
+    </aside>
+
+    <section>
+        <header>
+            <div class="menu-toggle" onclick="openNav()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <a href="#" class="logo">Your<span>Shops</span></a>
+            <div class="search-bar">
+                <input type="search" placeholder="Search...">
+                <i class="fa fa-search" onclick="toggleSearch()"></i>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="watchYS.html">Smart Watches</a>
+                        <a href="mobileYS.html">Mobiles</a>
+                        <a href="laptopYS.html">Laptops</a>
+                        <a href="#">Women Ethnic</a>
+                        <a href="#">Women Western</a>
+                        <a href="#">Men</a>
+                        <a href="toyesYS.html">Kids</a>
+                        <a href="#">Home & Kitchen</a>
+                        <a href="#">Beauty & health</a>
+                        <a href="#">Jewellery & Accessories</a>
+                        <a href="#">Bags & Footwear</a>
+                        <a href="#">Electronics</a>
+                        <a href="#">Sports & Fitness</a>
+                        <a href="#">Car & Motorbike</a>
+                        <a href="#">Help & More</a>
+                    </div>
+                </li>
+                <li><a href="#">My Orders</a></li>
+                <li><a href="#">Contacts</a></li>
+                <li><a href="#">Help</a></li>
+                <li style="margin-left: auto;"><a href="#">New Item</a></li>
+            </ul>
+            <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\YSsignup.html" class="account-btn"><i class="fa fa-user-circle"></i>Account</a>
+        </header>
+        
+        <!-- Banner -->
+        <div class="banner">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\banner\template-banner-for-online-store-with-shopping-vector-42935756.jpg" alt="Banner Image">
+        </div>
+
+        <!-- Product Section -->
+        <div class="product-container">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\Galaxy S23 ultra.webp.jpeg" alt="Product 1">
+                <h3>Samsung GalaxyS23 Ultra 5G(12GB,256GB)</h3>
+                <p>Description of Product 1</p>
+                <div class="price">₹159900</div>
+                <div class="buttons">
+                    <button class="buy" ><a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                    <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\41zRPE0MvvL._SX300_SY300_QL70_FMwebp_.webp" alt="Product 2">
+                <h3>Hp Pavilion X360</h3>
+                <p>11Th Gen Intel Core I3 14 Inches Fhd Multitouch 8Gb Ram/512Gb Ssd</p>
+                <div class="price">₹54,133</div>
+                <div class="buttons">
+                    <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button> </a>
+                    <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Repeat for more products... -->
+            
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\71LfnkRgZ4L._AC_UF1000,1000_QL80_FMwebp_.webp" alt="Product 3">
+                <h3>Apple Watch(2nd Gen)[GPS]</h3>
+                <p>color-Midnight</p>
+                <div class="price">₹28000</div>
+                <div class="buttons">
+                    <button class="buy" ><a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                    <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                </div>
+            </div>
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                    <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\clothes  & Toyes\xxl-tblrnful-z91-tbljog-j35tracksuit-tripr-original-imagsdb9vdjusqhu.webp" alt="Product 4">
+                    <h3>Printed Men Track Suit black </h3>
+                    <p>size-M,S</p>
+                    <div class="price">₹439</div>
+                    <div class="buttons">
+                        <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                        <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                    </div>
+            </div>
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\mobiles & TV\download.webp" alt="Product 4">
+                <h3>iFFALCON by TCL S53 101 cm (40 inch)  </h3>
+                <p>Full HD LED Smart Android TV with Bezel-Less design & 24W Speaker  (iFF40S53)</p>
+                <div class="price">₹14,999</div>
+                <div class="buttons">
+                    <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                    <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                </div>
+        </div>
+            <!-- Product Card 6 -->
+        <div class="product-card">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\clothes  & Toyes\71kSe+-0o-L._SY741_.jpg" alt="Product 4">
+            <h3>Bee M Pee Designer Women's Banarasi Silk  </h3>
+            <p>Solid Saree with Blouse Piece (Raji Green B)</p>
+            <div class="price">₹949</div>
+            <div class="buttons">
+                <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+            </div>
+            </div>
+            <!-- Product Card 7
+            <div class="product-card">
+                <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\others items\31pOl7-SUeL._SX342_SY445_.jpg" alt="Product 4">
+                <h3>Dervin UV Protected  </h3>
+                <p>Square Rimless Sunglasses for Men and Women. UV protected lenses shield eyes from harmful sun rays.</p>
+                <div class="price">₹349</div>
+                <div class="buttons">
+                    <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                    <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                </div>
+    </div>
+
+                <!-- Product Card 8 -->
+                <div class="product-card">
+                    <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\others items\31pOl7-SUeL._SX342_SY445_.jpg" alt="Product 4">
+                    <h3>Dervin UV Protected  </h3>
+                    <p>Square Rimless Sunglasses for Men and Women. UV protected lenses shield eyes from harmful sun rays.</p>
+                    <div class="price">₹349</div>
+                    <div class="buttons">
+                        <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                        <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                    </div>
+        </div>
+
+                    <!-- Product Card 9
+                    <div class="product-card">
+                        <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\others items\31pOl7-SUeL._SX342_SY445_.jpg" alt="Product 4">
+                        <h3>Dervin UV Protected  </h3>
+                        <p>Square Rimless Sunglasses for Men and Women. UV protected lenses shield eyes from harmful sun rays.</p>
+                        <div class="price">₹349</div>
+                        <div class="buttons">
+                            <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                            <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                        </div>
+            </div> -->
+                        <!-- Product Card 10
+                        <div class="product-card">
+                            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\others items\31pOl7-SUeL._SX342_SY445_.jpg" alt="Product 4">
+                            <h3>Dervin UV Protected  </h3>
+                            <p>Square Rimless Sunglasses for Men and Women. UV protected lenses shield eyes from harmful sun rays.</p>
+                            <div class="price">₹349</div>
+                            <div class="buttons">
+                                <button class="buy"> <a href="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\dileveryYS.html">Buy Now</button></a>
+                                <button class="cart" onclick="alert('Add to Cart clicked')">Add to Cart</button>
+                            </div>
+                </div>  -->
+        <!-- <div class="banner1">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\banner\offer-banner-50off.jpg" alt="Banner Image1">
+        </div> -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Digital Store. All rights reserved</p>
+        <p>Developed By KARAN | karanc9027@gmail.com</p>
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "200px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+         function toggleSearch() {
+             const searchInput = document.getElementById("searchInput");
+             searchInput.classList.toggle("active");
+             searchInput.focus();
+             searchInput.classList.toggle("inactive");
+         }
+
+         document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('ul.mySidebar').classList.toggle('show');
+        });
+
+
+
+        // const menuToggle = document.querySelector('.menu-toggle');
+        // const navMenu = document.querySelector('nav ul');
+        // const navLinks = document.querySelectorAll('.nav-link');
+
+        // menuToggle.addEventListener('click', () => {
+        //     navMenu.classList.toggle('show');
+        // });
+    </script>
+</body>
+</html>

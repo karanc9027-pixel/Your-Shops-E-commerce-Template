@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptops</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 1rem;
+            font-family: 'Merriweather Sans', sans-serif;
+            background: #ffffff;
+            color: #333;
+            padding: 1rem;
+        }
+        .all-products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .product {
+            width: 230px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-info {
+            text-align: center;
+        }
+        .product-title {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #f9004d;
+            margin: 10px 0;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .product-btn, .cart-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .product-btn {
+            background: #007bff;
+        }
+        .cart-btn {
+            background: #28a745;
+        }
+        .product-btn:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+        .cart-btn:hover {
+            background: #218838;
+            transform: translateY(-3px);
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.715);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+        .footer_col {
+            margin-bottom: 20px;
+        }
+        .footer_col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .footer_col ul {
+            list-style: none;
+        }
+        .footer_col ul li {
+            margin-bottom: 10px;
+        }
+        .footer_col ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer_col ul li a:hover {
+            color: #ccc;
+        }
+        @media (max-width: 768px) {
+            .all-products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="all-products">
+        <div class="product">
+            <img src="C:\@karan9027\laptop\mbp-16-spaceblack-cto-hero-202310.jpg" alt="Apple MacBook Pro">
+            <div class="product-info">
+                <h6 class="product-title">Apple 2023 MacBook Pro 16-inch 48GB Unified Memory, 1TB</h6>
+                <p class="product-price">₹3,99,900</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\laptop\51hvBtWe0IL._SX300_SY300_QL70_FMwebp_.webp" alt="Acer Predator Helios Neo 16">
+            <div class="product-info">
+                <h6 class="product-title">Acer Predator Helios Neo 16 Gaming 13th Gen i7 Processor 16 GB/1TB SSD</h6>
+                <p class="product-price">₹1,19,980</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\laptop\shopping.webp" alt="Samsung Galaxy Book3">
+            <div class="product-info">
+                <h6 class="product-title">Samsung Galaxy Book3 Core I5 13th Gen - 16 GB/512 GB SSD</h6>
+                <p class="product-price">₹79,990</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\laptop\61XsF-d1JVL._SX679_.jpg" alt="Acer Swift 5">
+            <div class="product-info">
+                <h6 class="product-title">Acer Swift 5 SF514-55TA Intel i5-1135G7 Processor 8GB LPDDR4X 512GB SSD</h6>
+                <p class="product-price">₹72,990</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\laptop\41zRPE0MvvL._SX300_SY300_QL70_FMwebp_.webp" alt="HP Pavilion X360">
+            <div class="product-info">
+                <h6 class="product-title">HP Pavilion X360 11Th Gen Intel Core I3 14 Inches FHD Multitouch 8GB RAM/512GB SSD</h6>
+                <p class="product-price">₹54,133</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\@karan9027\laptop\tablet-xps-13-9315-blue-gallery-8.avif" alt="Dell XPS 13 2-in-1">
+            <div class="product-info">
+                <h6 class="product-title">XPS 13 2-in-1 Laptop 12th Gen Intel® Core™ i5-1230U 16/512</h6>
+                <p class="product-price">₹1,51,790.00</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="" alt="Apple Watch">
+            <div class="product-info">
+                <h6 class="product-title"></h6>
+                <p class="product-price">₹28,000</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="" alt="Fire-Boltt Phoenix">
+            <div class="product-info">
+                <h6 class="product-title"></h6>
+                <p class="product-price">₹1,500</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="" alt="Fastrack New Reflex">
+            <div class="product-info">
+                <h6 class="product-title"></h6>
+                <p class="product-price"></p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <img src="C:\Users\Avishkar\OneDrive\Desktop\Your Shop\laptops & Watches\wristwatch.webp" alt="Swisstyle SS-GR0912-BLK">
+            <div class="product-info">
+                <h6 class="product-title">Swisstyle SS-GR0912-BLK Classic Analog Black Dial Men's Watch</h6>
+                <p class="product-price">₹1,122</p>
+                <div class="button-group">
+                    <a class="product-btn" href="dileveryYS.html">Buy Now</a>
+                    <a class="cart-btn" href="#">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer_col">
+            <h2>Company</h2>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Affiliate Program</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h2>Get Help</h2>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Order Status</a></li>
+                <li><a href="#">Payment Options</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h2>Online Shop</h2>
+            <ul>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">Bag</a></li>
+                <li><a href="#">Laptop</a></li>
+                <li><a href="#">Headphone</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h2>Follow Us</h2>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">YouTube</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
